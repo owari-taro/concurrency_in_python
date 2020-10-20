@@ -32,9 +32,10 @@ if __name__ == "__main__":
         thread = threading.Thread(target=ping, args=(url,))
         threads.append(thread)
         thread.start()
-        thread.join()
+        #thread.join()
 
-    # for thread in threads:
-     #   thread.join()
+    for thread in threads:
+        #wait until each thread is finished
+        thread.join()
 
     print(f'Threading: {time.time() - start : .2f} seconds')
